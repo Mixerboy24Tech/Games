@@ -1,16 +1,17 @@
+using System.Collections;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
 	public Vector2 jumpForce = new Vector2(0, 300);
-	
-	void Update ()
+    public Rigidbody2D rigidbody2D;
+    void Update ()
 	{
 		
 		if (Input.GetKeyUp("space"))
 		{
-			rigidbody2D.velocity = Vector2.zero;
-			rigidbody2D.AddForce(jumpForce);
+            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            GetComponent<Rigidbody2D>().AddForce(jumpForce);
 		}
 		
 		
